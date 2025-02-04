@@ -1,3 +1,6 @@
+[![CI Pipeline](https://github.com/neural-chilli/fluxfakr/actions/workflows/build.yml/badge.svg)](https://github.com/neural-chilli/fluxfakr/actions/workflows/build.yml)
+[![Quarto Docs](https://img.shields.io/badge/docs-online-blue.svg)](https://neural-chilli.github.io/fluxfakr/)
+
 # FluxFakr
 
 ## Overview
@@ -128,7 +131,7 @@ Contributions are welcome! To get started:
 
 ## License
 
-FluxFakr is open-source software, licensed under **MIT**.
+FluxFakr is open-source software, licensed under the Apache 2.0 license.
 
 ---
 
