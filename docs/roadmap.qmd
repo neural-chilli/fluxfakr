@@ -1,0 +1,45 @@
+---
+title: "FluxFakr - Roadmap"
+---
+
+# Roadmap
+
+This document outlines our planned features and improvements for FluxFakr.
+
+## Near-Term Goals
+
+- **Expand Generator Modules:**
+  - Enhance the Market Data Generator.
+  - Develop additional modules (e.g., sales data, IoT data).
+
+- **Improve Documentation:**
+  - Add more detailed how-to guides and tutorials.
+  - Create video walk-throughs and interactive examples.
+
+## Mid-Term Goals
+
+- **Further Expand Generator Modules:**
+  - Develop a module using Langchain to allow data creation using an LLM
+
+- **Performance Enhancements:**
+  - Optimize simulation performance for high message rates.
+  - Explore asynchronous processing for scalability.
+
+- **User Customization:**
+  - Enable custom JSON templates for generator modules.
+  - Develop a web-based configuration UI.
+
+- **Plugins:**
+  - Enable custom plugins in WASM for generator modules.
+
+## Long-Term Goals
+
+- **Support Additional Transports:**
+  - Allow transports other than Kafka (e.g., MQTT, AMQP, Redis).
+
+- **Community Engagement:**
+  - Foster a growing community of contributors.
+  - Seek support and mentors for Apache Incubator.
+
+
+We welcome feedback on our roadmap. Feel free to open an issue or submit a pull request with your suggestions!

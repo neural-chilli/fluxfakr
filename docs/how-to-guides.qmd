@@ -1,0 +1,44 @@
+---
+title: "FluxFakr - How-to Guides"
+---
+
+# How-to Guides
+
+This section provides step-by-step guides to help you effectively use FluxFakr.
+
+## Running a Market Data Simulation
+
+1. **Build the Project:**
+
+   ```bash
+   cargo build --release
+   ```
+
+2. **Run the Simulator:**
+
+   ```bash
+   ./target/release/fluxfakr --module market --mps 100 --variants 5\
+    --broker localhost:9092 --topic market-data
+   ```
+
+   This simulates market data at 100 messages per second for 5 instruments.
+
+   Sample messages
+
+   ```json
+   {"ask":194.87817534561705,"bid":194.2493874690181,"instrument":"STK0","price":194.56378140731758,"timestamp":1738677164,"volume":1283}
+   {"ask":194.901509312583,"bid":194.48144141492307,"instrument":"STK0","price":194.69147536375303,"timestamp":1738677165,"volume":2386}
+   {"ask":195.09920944595802,"bid":194.36777989565638,"instrument":"STK0","price":194.7334946708072,"timestamp":1738677166,"volume":3545}
+   ```
+
+   Sample of output when app is terminated
+
+   ```csv
+    id,price,bid,ask,volume
+    STK0,194.73,194.37,195.10,3545
+   ```
+
+
+## Customization
+
+You can adjust simulation parameters such as drift and volatility in the code, at some point we'd like to add module-specific parameters to the command line.

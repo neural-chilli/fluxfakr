@@ -1,0 +1,35 @@
+---
+title: "FluxFakr - FAQ and Troubleshooting"
+---
+
+# FAQ and Troubleshooting
+
+This section addresses common questions and provides troubleshooting tips for FluxFakr.
+
+## Frequently Asked Questions
+
+**Q: What is FluxFakr?**
+A: FluxFakr is a modular data stream generator written in Rust that simulates synthetic data flows.
+
+**Q: What do I need to run FluxFakr?**
+A: You need Rust (edition 2021) and Cargo installed, along with basic command-line knowledge.
+
+**Q: How do I add a new generator module?**
+A: Implement the `Generator` trait in a new module under `src/generators` and update the generator manager accordingly.
+
+**Q: Can I customize simulation parameters?**
+A: Yes, FluxFakr allows you to configure settings such as messages per second, number of instruments, and module-specific parameters.
+
+## Troubleshooting Tips
+
+**Problem:** FluxFakr does not build.
+**Solution:**
+- Verify you have the latest stable version of Rust.
+- Run `cargo clean` and then `cargo build --release`.
+
+**Problem:** No output when running FluxFakr.
+**Solution:**
+- Check that you are using the correct command-line parameters.
+- Review the terminal output for any error messages during runtime.
+
+If you continue to experience issues, please open an issue on GitHub for further assistance.

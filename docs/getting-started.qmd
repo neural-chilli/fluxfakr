@@ -1,0 +1,40 @@
+---
+title: "FluxFakr - Getting Started"
+---
+
+# Getting Started
+
+This guide will walk you through setting up FluxFakr on your local machine.
+
+## Prerequisites
+
+- **Rust (Edition 2021)** and Cargo installed.
+- Basic command-line knowledge.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/neural-chilli/fluxfakr.git
+cd fluxfakr
+```
+
+Build the project in release mode:
+
+```bash
+cargo build --release
+```
+
+## Running FluxFakr
+
+Run the executable with your desired parameters. For example, to simulate market data at 100 messages per second for 5 instruments:
+
+```bash
+./target/release/fluxfakr --module market --mps 100 --variants 5  \
+--broker localhost:9092 --topic market-data
+```
+
+## Next Steps
+
+After getting FluxFakr running, explore the other sections to learn more about its core concepts, advanced usage, and how to contribute.

@@ -1,0 +1,53 @@
+project:
+  type: website
+
+# Configure the website
+website:
+  title: "FluxFakr"
+  # The navbar brand will display the logo + project name
+  navbar:
+    brand:
+      text: "FluxFakr"
+      href: index.qmd
+    logo: "images/logo.webp"
+    search: true
+    right:
+      - icon: github
+        href: "https://github.com/neural-chilli/fluxfakr"
+      - text: "Download"
+        href: "https://github.com/neural-chilli/fluxfakr/releases"
+
+  # Define the left sidebar navigation structure
+  sidebar:
+    - contents:
+        - text: "Introduction"
+          href: index.qmd
+        - text: "Getting Started"
+          href: getting-started.qmd
+        - text: "Core Concepts and Architecture"
+          href: core-concepts-and-architecture.qmd
+        - text: "How-to Guides"
+          href: how-to-guides.qmd
+        - text: "FAQ and Troubleshooting"
+          href: faq-and-troubleshooting.qmd
+        - text: "Contributor / Developer Guide"
+          href: contributor-developer-guide.qmd
+        - text: "Roadmap"
+          href: roadmap.qmd
+
+# Theme configuration
+format:
+  html:
+    split: false
+    theme:
+      light: flatly
+      dark: darkly
+    toc: true
+    toc-location: right
+    css: styles.css
+
+# (Optional) Execute options if you have code in pages
+execute:
+  warning: false
+  echo: false
+

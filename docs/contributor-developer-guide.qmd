@@ -1,0 +1,64 @@
+---
+title: "FluxFakr - Contributor / Developer Guide"
+---
+
+# Contributor / Developer Guide
+
+Welcome to the FluxFakr Contributor and Developer Guide. This document is designed to help you get started with contributing to FluxFakr and understanding its internal workings.
+
+## Getting Started with Development
+
+1. **Fork and Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/neural-chilli/fluxfakr.git
+   cd fluxfakr
+   ```
+
+2. **Set Up Your Environment:**
+   Ensure you have Rust (edition 2021) and Cargo installed.
+
+3. **Build the Project:**
+
+   ```bash
+   cargo build
+   ```
+
+## Project Structure
+
+- **src/main.rs:**
+  The entry point; handles CLI parsing and generator selection.
+
+- **src/generator.rs:**
+  Defines the common `Generator` trait.
+
+- **src/generators/:**
+  Contains the different generator modules (e.g., `market.rs` for market data, `langchain.rs` for language-based data generation).
+
+## Adding a New Generator Module
+
+1. **Implement the `Generator` Trait:**
+   Create a new module under `src/generators/` and implement the trait:
+   ```rust
+   pub trait Generator {
+       fn generate(&mut self) -> String;
+       fn dump(&self) -> String;
+   }
+   ```
+
+2. **Integrate Your Module:**
+   Update `src/generators/mod.rs` to include your new module.
+
+3. **Write Tests:**
+   Ensure you add unit tests for your module to maintain stability.
+
+## Contribution Guidelines
+
+- **Code Style:**
+  Follow Rust's standard formatting guidelines (`rustfmt`).
+- **Commit Messages:**
+  Write clear and descriptive commit messages.
+- **Pull Requests:**
+  Submit pull requests for review. Ensure that all tests pass before requesting a merge.
+
+Thank you for your contributions to FluxFakr!

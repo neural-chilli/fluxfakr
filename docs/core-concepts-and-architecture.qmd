@@ -1,0 +1,50 @@
+---
+title: "FluxFakr - Core Concepts and Architecture"
+---
+
+# Core Concepts and Architecture
+
+FluxFakr is designed with a modular, extensible architecture that allows you to simulate various types of data streams.
+
+## The Generator Trait
+
+At its core, FluxFakr defines a common `Generator` trait which every module implements. This trait requires two methods:
+- `generate() -> String`: Produces a JSON message representing a data tick.
+- `dump() -> String`: Outputs a CSV summary of the module’s internal state.
+
+## Modular Design
+
+Each generator module (e.g., Market Data, LangChain Data) implements the `Generator` trait. This makes it easy to:
+- Swap out or add new generators.
+- Test each module independently.
+- Extend FluxFakr’s capabilities without changing the core code.
+
+
+## High-Level Architecture
+
+Below is a Mermaid diagram outlining the architecture:
+
+
+```{mermaid}
+%%{init: {'theme': 'neutral', 'themeCSS': '.node rect { rx: 10; ry: 10; }',"flowchart": {"rankSpacing": 150}}}%%
+flowchart TD
+    A[FluxFakr Core] --> B[CLI & Configuration]
+    A --> C[Generators]
+    C --> D[Market Data Generator]
+    C --> F[Other Data Generator]
+    A --> G[Output: JSON Messages & CSV Dumps]
+```
+
+
+## Data Flow Overview
+
+1. **Input:**
+   Command-line parameters (e.g., messages per second, number of instruments) define the simulation settings.
+
+2. **Processing:**
+   The selected generator module simulates data ticks and updates its internal state.
+
+3. **Output:**
+   JSON messages are streamed in real time, and on shutdown, the internal state is dumped as a CSV.
+
+This design ensures FluxFakr remains flexible, robust, and easy to extend.
