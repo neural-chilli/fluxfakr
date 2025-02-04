@@ -37,14 +37,8 @@ cargo build --release
 Run FluxFakr with your desired parameters. For example, to simulate **market data** at **100 messages per second** for **5 instruments**, use:
 
 ```bash
-./target/release/fluxfakr --module market-data --mps 100 --variants 5 \
+./target/release/fluxfakr --module market --mps 100 --variants 5 \
 --broker localhost:9092 --topic market-data
-```
-
-For **LangChain-generated data**, specify a prompt-based simulation:
-
-```bash
-./target/release/fluxfakr --module langchain-data --prompt "Generate customer transactions" --repeat 50
 ```
 
 ---
