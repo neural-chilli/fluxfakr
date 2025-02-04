@@ -11,7 +11,7 @@ use nix::unistd::Pid;
 fn integration_test_market_module_messages_and_app_graceful_shutdown() -> Result<(), Box<dyn std::error::Error>> {
     // Spawn the binary with a slow message rate so that we can capture output easily.
     // Here, we use --module market, --mps 1 (one message per second), and one variant.
-    let mut child = Command::cargo_bin("fluxfakr")?
+    let child = Command::cargo_bin("fluxfakr")?
         .args(&["--module", "stock", "--mps", "1", "--variants", "1"])
         .stdout(Stdio::piped())
         .stderr(Stdio::piped())

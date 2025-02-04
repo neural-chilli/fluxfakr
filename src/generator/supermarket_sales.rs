@@ -344,3 +344,122 @@ impl crate::Generator for SalesGenerator {
         }
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use serde_json::Value;
+    use crate::generator::Generator;
+
+    #[test]
+    fn test_compute_price_deterministic() {
+        let price1 = compute_price("Food", "Bread");
+        let price2 = compute_price("Food", "Bread");
+        assert_eq!(price1, price2, "compute_price should be deterministic");
+    }
+
+    #[test]
+    fn test_round_price() {
+        // For a raw price of 5.302, the floor is 5, candidate1 = 5.49, candidate2 = 5.99.
+        // 5.302 is closer to 5.49.
+        let rounded = round_price(5.302);
+        assert!((rounded - 5.49).abs() < 0.001, "Expected 5.49, got {}", rounded);
+
+        // For raw price 7.75, floor is 7, candidate1 = 7.49, candidate2 = 7.99.
+        // 7.75 is closer to 7.99.
+        let rounded = round_price(7.75);
+        assert!((rounded - 7.99).abs() < 0.001, "Expected 7.99, got {}", rounded);
+    }
+
+    #[test]
+    fn test_get_product_price_cache() {
+        // Calling get_product_price twice for the same product should yield the same result.
+        let price1 = get_product_price("Food", "Bread");
+        let price2 = get_product_price("Food", "Bread");
+        assert_eq!(price1, price2, "Price cache should return consistent prices");
+
+        // Ensure the computed price is one of the rounded candidates.
+        let raw_price = compute_price("Food", "Bread");
+        let base = raw_price.floor();
+        let candidate1 = base + 0.49;
+        let candidate2 = base + 0.99;
+        let diff1 = (raw_price - candidate1).abs();
+        let diff2 = (raw_price - candidate2).abs();
+        let expected = if diff1 <= diff2 { candidate1 } else { candidate2 };
+        assert!((price1 - expected).abs() < 0.001, "Rounded price does not match expected candidate");
+    }
+
+    #[test]
+    fn test_generate_product() {
+        let product = generate_product();
+        assert!(!product.product_name.is_empty(), "Product name should not be empty");
+        assert!(!product.category.is_empty(), "Category should not be empty");
+        assert!(!product.subcategory.is_empty(), "Subcategory should not be empty");
+        let expected_price = get_product_price(&product.category, &product.product_name);
+        assert!((product.unit_price - expected_price).abs() < 0.001,
+                "Product unit price should match cached price");
+    }
+
+    #[test]
+    fn test_generate_store() {
+        let store = generate_store();
+        assert_eq!(store.country, "USA", "Store country should be USA");
+        assert!(!store.town.is_empty(), "Store town should not be empty");
+        assert!(!store.state.is_empty(), "Store state should not be empty");
+    }
+
+    #[test]
+    fn test_generate_customer() {
+        let customer = generate_customer();
+        assert!(customer.age >= 18 && customer.age < 80, "Customer age out of range");
+        let valid_income = ["Low", "Medium", "High"];
+        assert!(valid_income.contains(&customer.income_band.as_str()),
+                "Customer income band is invalid");
+    }
+
+    #[test]
+    fn test_generate_sale_message() {
+        let store = generate_store();
+        let customer = generate_customer();
+        let sale = generate_sale_message("TXN123456", "BASKET1234", &store, &customer);
+        // Validate total_price equals product.unit_price * quantity.
+        let expected_total = sale.product.unit_price * sale.quantity as f64;
+        assert!((sale.total_price - expected_total).abs() < 0.001,
+                "Total price mismatch: expected {}, got {}",
+                expected_total, sale.total_price);
+    }
+
+    #[test]
+    fn test_sales_generator_basket_reset() {
+        let mut generator = SalesGenerator::new();
+        // Initialize a basket with exactly 3 items.
+        generator.init_basket(3);
+        let mut txn_ids = Vec::new();
+        // Generate three sale messages and record their transaction IDs.
+        for _ in 0..3 {
+            let sale_json = generator.generate();
+            let v: Value = serde_json::from_str(&sale_json).unwrap();
+            let txn_id = v["transaction_id"].as_str().unwrap().to_string();
+            txn_ids.push(txn_id);
+        }
+        // The basket should now be exhausted; next call should create a new basket.
+        let sale_json = generator.generate();
+        let v: Value = serde_json::from_str(&sale_json).unwrap();
+        let new_txn_id = v["transaction_id"].as_str().unwrap().to_string();
+        assert!(!txn_ids.contains(&new_txn_id),
+                "Transaction id should change when basket resets");
+    }
+
+    #[test]
+    fn test_dump() {
+        let mut generator = SalesGenerator::new();
+        // Initialize a basket with 5 items.
+        generator.init_basket(5);
+        let dump_str = generator.dump();
+        assert!(dump_str.contains("Basket Summary"),
+                "Dump should contain 'Basket Summary'");
+        assert!(dump_str.contains("TXN-"), "Dump should contain a transaction id");
+        assert!(dump_str.contains("BASKET-"), "Dump should contain a basket id");
+    }
+}
