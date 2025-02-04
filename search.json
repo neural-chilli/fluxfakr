@@ -74,7 +74,7 @@
     "href": "getting-started.html#running-fluxfakr",
     "title": "FluxFakr - Getting Started",
     "section": "Running FluxFakr",
-    "text": "Running FluxFakr\nRun the executable with your desired parameters. For example, to simulate market data at 100 messages per second for 5 instruments:\n./target/release/fluxfakr --module market --mps 100 --variants 5  \\\n--broker localhost:9092 --topic market-data",
+    "text": "Running FluxFakr\nRun the executable with your desired parameters. For example, to simulate market data at 100 messages per second for 5 instruments:\n./target/release/fluxfakr --module stock --mps 100 --variants 5  \\\n--broker localhost:9092 --topic market-data",
     "crumbs": [
       "Getting Started"
     ]
@@ -124,7 +124,7 @@
     "href": "core-concepts-and-architecture.html#high-level-architecture",
     "title": "FluxFakr - Core Concepts and Architecture",
     "section": "High-Level Architecture",
-    "text": "High-Level Architecture\nBelow is a Mermaid diagram outlining the architecture:\n\n\n\n\n\n%%{init: {'theme': 'neutral', 'themeCSS': '.node rect { rx: 10; ry: 10; }',\"flowchart\": {\"rankSpacing\": 150}}}%%\nflowchart TD\n    A[FluxFakr Core] --&gt; B[CLI & Configuration]\n    A --&gt; C[Generators]\n    C --&gt; D[Market Data Generator]\n    C --&gt; F[Other Data Generator]\n    A --&gt; G[Output: JSON Messages & CSV Dumps]",
+    "text": "High-Level Architecture\nBelow is a Mermaid diagram outlining the architecture:\n\n\n\n\n\n%%{init: {'theme': 'neutral', 'themeCSS': '.node rect { rx: 10; ry: 10; }',\"flowchart\": {\"rankSpacing\": 150}}}%%\nflowchart TD\n    A[FluxFakr Core] --&gt; B[CLI & Configuration]\n    A --&gt; C[Generators]\n    C --&gt; D[Stock Prices Data Generator]\n    C --&gt; E[Supermarket Sales Data Generator]\n    C --&gt; F[Other Data Generator]\n    A --&gt; G[Output: JSON Messages & CSV Dumps]",
     "crumbs": [
       "Core Concepts and Architecture"
     ]
@@ -155,6 +155,16 @@
     "title": "FluxFakr - How-to Guides",
     "section": "Running a Market Data Simulation",
     "text": "Running a Market Data Simulation\n\nBuild the Project:\ncargo build --release\nRun the Simulator:\n./target/release/fluxfakr --module market --mps 100 --variants 5\\\n --broker localhost:9092 --topic market-data\nThis simulates market data at 100 messages per second for 5 instruments.\nSample messages\n{\"ask\":194.87817534561705,\"bid\":194.2493874690181,\"instrument\":\"STK0\",\"price\":194.56378140731758,\"timestamp\":1738677164,\"volume\":1283}\n{\"ask\":194.901509312583,\"bid\":194.48144141492307,\"instrument\":\"STK0\",\"price\":194.69147536375303,\"timestamp\":1738677165,\"volume\":2386}\n{\"ask\":195.09920944595802,\"bid\":194.36777989565638,\"instrument\":\"STK0\",\"price\":194.7334946708072,\"timestamp\":1738677166,\"volume\":3545}\nSample of output when app is terminated\n id,price,bid,ask,volume\n STK0,194.73,194.37,195.10,3545",
+    "crumbs": [
+      "How-to Guides"
+    ]
+  },
+  {
+    "objectID": "how-to-guides.html#running-a-supermarket-sales-data-simulation",
+    "href": "how-to-guides.html#running-a-supermarket-sales-data-simulation",
+    "title": "FluxFakr - How-to Guides",
+    "section": "Running a Supermarket Sales Data Simulation",
+    "text": "Running a Supermarket Sales Data Simulation\n\nBuild the Project:\ncargo build --release\nRun the Simulator:\n./target/release/fluxfakr --module supermarket --mps 100 --variants 1\\\n --broker localhost:9092 --topic supermarket\nThis simulates market data at 100 messages per second - note that variants is ignored as the orders are based on a defined range of products.\nSample messages\n {\"transaction_id\":\"TXN-43263346\",\"basket_id\":\"BASKET-2787\",\"timestamp\":1738712746,\"store\":{\"town\":\"Hagenes haven\",\"state\":\"ND\",\"country\":\"USA\"},\"customer\":{\"age\":27,\"income_band\":\"Low\"},\"product\":{\"product_name\":\"Kids T-Shirt\",\"category\":\"Clothing\",\"subcategory\":\"Children\",\"unit_price\":8.49},\"quantity\":2,\"total_price\":16.98}\n {\"transaction_id\":\"TXN-43263346\",\"basket_id\":\"BASKET-2787\",\"timestamp\":1738712746,\"store\":{\"town\":\"Hagenes haven\",\"state\":\"ND\",\"country\":\"USA\"},\"customer\":{\"age\":27,\"income_band\":\"Low\"},\"product\":{\"product_name\":\"Nail Clippers\",\"category\":\"Pets\",\"subcategory\":\"Grooming\",\"unit_price\":7.49},\"quantity\":1,\"total_price\":7.49}\n {\"transaction_id\":\"TXN-43263346\",\"basket_id\":\"BASKET-2787\",\"timestamp\":1738712746,\"store\":{\"town\":\"Hagenes haven\",\"state\":\"ND\",\"country\":\"USA\"},\"customer\":{\"age\":27,\"income_band\":\"Low\"},\"product\":{\"product_name\":\"Sunscreen\",\"category\":\"Beauty\",\"subcategory\":\"Skincare\",\"unit_price\":28.99},\"quantity\":4,\"total_price\":115.96}\n {\"transaction_id\":\"TXN-43263346\",\"basket_id\":\"BASKET-2787\",\"timestamp\":1738712746,\"store\":{\"town\":\"Hagenes haven\",\"state\":\"ND\",\"country\":\"USA\"},\"customer\":{\"age\":27,\"income_band\":\"Low\"},\"product\":{\"product_name\":\"Shampoo\",\"category\":\"Beauty\",\"subcategory\":\"Haircare\",\"unit_price\":23.49},\"quantity\":1,\"total_price\":23.49}\nSample of output when app is terminated\n Basket Summary: transaction_id: TXN-44989526, basket_id: BASKET-7644, items_generated: 12, total_items: 12",
     "crumbs": [
       "How-to Guides"
     ]
