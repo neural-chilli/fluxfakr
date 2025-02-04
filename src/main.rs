@@ -12,7 +12,7 @@ use rdkafka::config::ClientConfig;
 use rdkafka::producer::{BaseProducer, BaseRecord, Producer};
 use crate::generator::Generator;
 use crate::generator::market::MarketDataGenerator;
-
+use crate::generator::supermarket_sales::SalesGenerator;
 
 /// FluxFakr: A modular data stream generator.
 #[derive(Parser, Debug)]
@@ -58,7 +58,8 @@ fn main() {
 
     // Generator manager section
     let mut generator: Box<dyn Generator> = match cli.module.as_str() {
-        "market" => Box::new(MarketDataGenerator::new(cli.variants as usize)),
+        "stock" => Box::new(MarketDataGenerator::new(cli.variants as usize)),
+        "supermarket" => Box::new(SalesGenerator::new()),
         _ => {
             eprintln!("Unknown module: {}", cli.module);
             std::process::exit(1);

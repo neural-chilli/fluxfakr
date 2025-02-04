@@ -38,6 +38,39 @@ This section provides step-by-step guides to help you effectively use FluxFakr.
    ```
 
 
+## Running a Supermarket Sales Data Simulation
+
+1. **Build the Project:**
+
+   ```bash
+   cargo build --release
+   ```
+
+2. **Run the Simulator:**
+
+   ```bash
+   ./target/release/fluxfakr --module supermarket --mps 100 --variants 1\
+    --broker localhost:9092 --topic supermarket
+   ```
+
+   This simulates market data at 100 messages per second - note that variants is ignored as the orders are based on a defined range of products.
+
+   Sample messages
+
+   ```json
+    {"transaction_id":"TXN-43263346","basket_id":"BASKET-2787","timestamp":1738712746,"store":{"town":"Hagenes haven","state":"ND","country":"USA"},"customer":{"age":27,"income_band":"Low"},"product":{"product_name":"Kids T-Shirt","category":"Clothing","subcategory":"Children","unit_price":8.49},"quantity":2,"total_price":16.98}
+    {"transaction_id":"TXN-43263346","basket_id":"BASKET-2787","timestamp":1738712746,"store":{"town":"Hagenes haven","state":"ND","country":"USA"},"customer":{"age":27,"income_band":"Low"},"product":{"product_name":"Nail Clippers","category":"Pets","subcategory":"Grooming","unit_price":7.49},"quantity":1,"total_price":7.49}
+    {"transaction_id":"TXN-43263346","basket_id":"BASKET-2787","timestamp":1738712746,"store":{"town":"Hagenes haven","state":"ND","country":"USA"},"customer":{"age":27,"income_band":"Low"},"product":{"product_name":"Sunscreen","category":"Beauty","subcategory":"Skincare","unit_price":28.99},"quantity":4,"total_price":115.96}
+    {"transaction_id":"TXN-43263346","basket_id":"BASKET-2787","timestamp":1738712746,"store":{"town":"Hagenes haven","state":"ND","country":"USA"},"customer":{"age":27,"income_band":"Low"},"product":{"product_name":"Shampoo","category":"Beauty","subcategory":"Haircare","unit_price":23.49},"quantity":1,"total_price":23.49}
+   ```
+
+   Sample of output when app is terminated
+
+   ```text
+    Basket Summary: transaction_id: TXN-44989526, basket_id: BASKET-7644, items_generated: 12, total_items: 12
+   ```
+
+
 ## Customization
 
 You can adjust simulation parameters such as drift and volatility in the code, at some point we'd like to add module-specific parameters to the command line.

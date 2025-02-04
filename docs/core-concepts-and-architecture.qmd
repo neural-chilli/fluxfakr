@@ -28,7 +28,8 @@ Below is a Mermaid diagram outlining the architecture:
 flowchart TD
     A[FluxFakr Core] --> B[CLI & Configuration]
     A --> C[Generators]
-    C --> D[Market Data Generator]
+    C --> D[Stock Prices Data Generator]
+    C --> E[Supermarket Sales Data Generator]
     C --> F[Other Data Generator]
     A --> G[Output: JSON Messages & CSV Dumps]
 ```

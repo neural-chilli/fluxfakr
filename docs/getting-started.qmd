@@ -29,7 +29,7 @@ cargo build --release
 Run the executable with your desired parameters. For example, to simulate market data at 100 messages per second for 5 instruments:
 
 ```bash
-./target/release/fluxfakr --module market --mps 100 --variants 5  \
+./target/release/fluxfakr --module stock --mps 100 --variants 5  \
 --broker localhost:9092 --topic market-data
 ```
 
