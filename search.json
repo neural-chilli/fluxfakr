@@ -4,7 +4,7 @@
     "href": "faq-and-troubleshooting.html",
     "title": "FluxFakr - FAQ and Troubleshooting",
     "section": "",
-    "text": "This section addresses common questions and provides troubleshooting tips for FluxFakr.\n\n\nQ: What is FluxFakr? A: FluxFakr is a modular data stream generator written in Rust that simulates synthetic data flows.\nQ: What do I need to run FluxFakr? A: You need Rust (edition 2021) and Cargo installed, along with basic command-line knowledge.\nQ: How do I add a new generator module? A: Implement the Generator trait in a new module under src/generators and update the generator manager accordingly.\nQ: Can I customize simulation parameters? A: Yes, FluxFakr allows you to configure settings such as messages per second, number of instruments, and module-specific parameters.\n\n\n\nProblem: FluxFakr does not build. Solution: - Verify you have the latest stable version of Rust. - Run cargo clean and then cargo build --release.\nProblem: No output when running FluxFakr. Solution: - Check that you are using the correct command-line parameters. - Review the terminal output for any error messages during runtime.\nIf you continue to experience issues, please open an issue on GitHub for further assistance.",
+    "text": "This section addresses common questions and provides troubleshooting tips for FluxFakr.",
     "crumbs": [
       "FAQ and Troubleshooting"
     ]
@@ -13,8 +13,8 @@
     "objectID": "faq-and-troubleshooting.html#frequently-asked-questions",
     "href": "faq-and-troubleshooting.html#frequently-asked-questions",
     "title": "FluxFakr - FAQ and Troubleshooting",
-    "section": "",
-    "text": "Q: What is FluxFakr? A: FluxFakr is a modular data stream generator written in Rust that simulates synthetic data flows.\nQ: What do I need to run FluxFakr? A: You need Rust (edition 2021) and Cargo installed, along with basic command-line knowledge.\nQ: How do I add a new generator module? A: Implement the Generator trait in a new module under src/generators and update the generator manager accordingly.\nQ: Can I customize simulation parameters? A: Yes, FluxFakr allows you to configure settings such as messages per second, number of instruments, and module-specific parameters.",
+    "section": "Frequently Asked Questions",
+    "text": "Frequently Asked Questions\nQ: What is FluxFakr? A: FluxFakr is a modular data stream generator written in Rust that simulates synthetic data flows.\nQ: What do I need to run FluxFakr? A: You need Rust (edition 2021) and Cargo installed, along with basic command-line knowledge.\nQ: How do I add a new generator module? A: Implement the Generator trait in a new module under src/generators and update the generator manager accordingly.\nQ: Can I customize simulation parameters? A: Yes, FluxFakr allows you to configure settings such as messages per second, number of instruments, and module-specific parameters.",
     "crumbs": [
       "FAQ and Troubleshooting"
     ]
@@ -23,8 +23,8 @@
     "objectID": "faq-and-troubleshooting.html#troubleshooting-tips",
     "href": "faq-and-troubleshooting.html#troubleshooting-tips",
     "title": "FluxFakr - FAQ and Troubleshooting",
-    "section": "",
-    "text": "Problem: FluxFakr does not build. Solution: - Verify you have the latest stable version of Rust. - Run cargo clean and then cargo build --release.\nProblem: No output when running FluxFakr. Solution: - Check that you are using the correct command-line parameters. - Review the terminal output for any error messages during runtime.\nIf you continue to experience issues, please open an issue on GitHub for further assistance.",
+    "section": "Troubleshooting Tips",
+    "text": "Troubleshooting Tips\nProblem: FluxFakr does not build. Solution: - Verify you have the latest stable version of Rust. - Run cargo clean and then cargo build --release.\nProblem: No output when running FluxFakr. Solution: - Check that you are using the correct command-line parameters. - Review the terminal output for any error messages during runtime.\nIf you continue to experience issues, please open an issue on GitHub for further assistance.",
     "crumbs": [
       "FAQ and Troubleshooting"
     ]
@@ -34,7 +34,7 @@
     "href": "index.html",
     "title": "FluxFakr - Introduction",
     "section": "",
-    "text": "Introduction\nWelcome to FluxFakr, the modular data stream generator built in Rust. FluxFakr simulates realistic synthetic data flows using a pluggable architecture that allows you to easily swap or extend generator modules.\nIn these docs you’ll find: - An overview of FluxFakr and its purpose. - Guides to get started with installation and usage. - Detailed explanations of core concepts and architecture. - How-to guides, FAQs, and troubleshooting tips. - A contributor and developer guide to help you join the project. - Our roadmap for future features and improvements.\nEnjoy exploring FluxFakr and happy coding!",
+    "text": "Welcome to FluxFakr, the modular data stream generator built in Rust. FluxFakr simulates realistic synthetic data flows using a pluggable architecture that allows you to easily swap or extend generator modules.\nIn these docs you’ll find: - An overview of FluxFakr and its purpose. - Guides to get started with installation and usage. - Detailed explanations of core concepts and architecture. - How-to guides, FAQs, and troubleshooting tips. - A contributor and developer guide to help you join the project. - Our roadmap for future features and improvements.\nEnjoy exploring FluxFakr and happy coding!",
     "crumbs": [
       "Introduction"
     ]
@@ -44,7 +44,7 @@
     "href": "getting-started.html",
     "title": "FluxFakr - Getting Started",
     "section": "",
-    "text": "This guide will walk you through setting up FluxFakr on your local machine.\n\n\n\nRust (Edition 2021) and Cargo installed.\nBasic command-line knowledge.\n\n\n\n\nClone the repository:\ngit clone https://github.com/neural-chilli/fluxfakr.git\ncd fluxfakr\nBuild the project in release mode:\ncargo build --release\n\n\n\nRun the executable with your desired parameters. For example, to simulate market data at 100 messages per second for 5 instruments:\n./target/release/fluxfakr --module market --mps 100 --variants 5  \\\n--broker localhost:9092 --topic market-data\n\n\n\nAfter getting FluxFakr running, explore the other sections to learn more about its core concepts, advanced usage, and how to contribute.",
+    "text": "This guide will walk you through setting up FluxFakr on your local machine.",
     "crumbs": [
       "Getting Started"
     ]
@@ -53,8 +53,8 @@
     "objectID": "getting-started.html#prerequisites",
     "href": "getting-started.html#prerequisites",
     "title": "FluxFakr - Getting Started",
-    "section": "",
-    "text": "Rust (Edition 2021) and Cargo installed.\nBasic command-line knowledge.",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nRust (Edition 2021) and Cargo installed.\nBasic command-line knowledge.",
     "crumbs": [
       "Getting Started"
     ]
@@ -63,8 +63,8 @@
     "objectID": "getting-started.html#installation",
     "href": "getting-started.html#installation",
     "title": "FluxFakr - Getting Started",
-    "section": "",
-    "text": "Clone the repository:\ngit clone https://github.com/neural-chilli/fluxfakr.git\ncd fluxfakr\nBuild the project in release mode:\ncargo build --release",
+    "section": "Installation",
+    "text": "Installation\nClone the repository:\ngit clone https://github.com/neural-chilli/fluxfakr.git\ncd fluxfakr\nBuild the project in release mode:\ncargo build --release",
     "crumbs": [
       "Getting Started"
     ]
@@ -73,8 +73,8 @@
     "objectID": "getting-started.html#running-fluxfakr",
     "href": "getting-started.html#running-fluxfakr",
     "title": "FluxFakr - Getting Started",
-    "section": "",
-    "text": "Run the executable with your desired parameters. For example, to simulate market data at 100 messages per second for 5 instruments:\n./target/release/fluxfakr --module market --mps 100 --variants 5  \\\n--broker localhost:9092 --topic market-data",
+    "section": "Running FluxFakr",
+    "text": "Running FluxFakr\nRun the executable with your desired parameters. For example, to simulate market data at 100 messages per second for 5 instruments:\n./target/release/fluxfakr --module market --mps 100 --variants 5  \\\n--broker localhost:9092 --topic market-data",
     "crumbs": [
       "Getting Started"
     ]
@@ -83,8 +83,8 @@
     "objectID": "getting-started.html#next-steps",
     "href": "getting-started.html#next-steps",
     "title": "FluxFakr - Getting Started",
-    "section": "",
-    "text": "After getting FluxFakr running, explore the other sections to learn more about its core concepts, advanced usage, and how to contribute.",
+    "section": "Next Steps",
+    "text": "Next Steps\nAfter getting FluxFakr running, explore the other sections to learn more about its core concepts, advanced usage, and how to contribute.",
     "crumbs": [
       "Getting Started"
     ]
@@ -94,7 +94,7 @@
     "href": "core-concepts-and-architecture.html",
     "title": "FluxFakr - Core Concepts and Architecture",
     "section": "",
-    "text": "FluxFakr is designed with a modular, extensible architecture that allows you to simulate various types of data streams.\n\n\nAt its core, FluxFakr defines a common Generator trait which every module implements. This trait requires two methods: - generate() -&gt; String: Produces a JSON message representing a data tick. - dump() -&gt; String: Outputs a CSV summary of the module’s internal state.\n\n\n\nEach generator module (e.g., Market Data, LangChain Data) implements the Generator trait. This makes it easy to: - Swap out or add new generators. - Test each module independently. - Extend FluxFakr’s capabilities without changing the core code.\n\n\n\nBelow is a Mermaid diagram outlining the architecture:\n\n\n\n\n\n%%{init: {'theme': 'neutral', 'themeCSS': '.node rect { rx: 10; ry: 10; }',\"flowchart\": {\"rankSpacing\": 150}}}%%\nflowchart TD\n    A[FluxFakr Core] --&gt; B[CLI & Configuration]\n    A --&gt; C[Generators]\n    C --&gt; D[Market Data Generator]\n    C --&gt; F[Other Data Generator]\n    A --&gt; G[Output: JSON Messages & CSV Dumps]\n\n\n\n\n\n\n\n\n\n\nInput: Command-line parameters (e.g., messages per second, number of instruments) define the simulation settings.\nProcessing: The selected generator module simulates data ticks and updates its internal state.\nOutput: JSON messages are streamed in real time, and on shutdown, the internal state is dumped as a CSV.\n\nThis design ensures FluxFakr remains flexible, robust, and easy to extend.",
+    "text": "FluxFakr is designed with a modular, extensible architecture that allows you to simulate various types of data streams.",
     "crumbs": [
       "Core Concepts and Architecture"
     ]
@@ -103,8 +103,8 @@
     "objectID": "core-concepts-and-architecture.html#the-generator-trait",
     "href": "core-concepts-and-architecture.html#the-generator-trait",
     "title": "FluxFakr - Core Concepts and Architecture",
-    "section": "",
-    "text": "At its core, FluxFakr defines a common Generator trait which every module implements. This trait requires two methods: - generate() -&gt; String: Produces a JSON message representing a data tick. - dump() -&gt; String: Outputs a CSV summary of the module’s internal state.",
+    "section": "The Generator Trait",
+    "text": "The Generator Trait\nAt its core, FluxFakr defines a common Generator trait which every module implements. This trait requires two methods: - generate() -&gt; String: Produces a JSON message representing a data tick. - dump() -&gt; String: Outputs a CSV summary of the module’s internal state.",
     "crumbs": [
       "Core Concepts and Architecture"
     ]
@@ -113,8 +113,8 @@
     "objectID": "core-concepts-and-architecture.html#modular-design",
     "href": "core-concepts-and-architecture.html#modular-design",
     "title": "FluxFakr - Core Concepts and Architecture",
-    "section": "",
-    "text": "Each generator module (e.g., Market Data, LangChain Data) implements the Generator trait. This makes it easy to: - Swap out or add new generators. - Test each module independently. - Extend FluxFakr’s capabilities without changing the core code.",
+    "section": "Modular Design",
+    "text": "Modular Design\nEach generator module (e.g., Market Data, LangChain Data) implements the Generator trait. This makes it easy to: - Swap out or add new generators. - Test each module independently. - Extend FluxFakr’s capabilities without changing the core code.",
     "crumbs": [
       "Core Concepts and Architecture"
     ]
@@ -123,8 +123,8 @@
     "objectID": "core-concepts-and-architecture.html#high-level-architecture",
     "href": "core-concepts-and-architecture.html#high-level-architecture",
     "title": "FluxFakr - Core Concepts and Architecture",
-    "section": "",
-    "text": "Below is a Mermaid diagram outlining the architecture:\n\n\n\n\n\n%%{init: {'theme': 'neutral', 'themeCSS': '.node rect { rx: 10; ry: 10; }',\"flowchart\": {\"rankSpacing\": 150}}}%%\nflowchart TD\n    A[FluxFakr Core] --&gt; B[CLI & Configuration]\n    A --&gt; C[Generators]\n    C --&gt; D[Market Data Generator]\n    C --&gt; F[Other Data Generator]\n    A --&gt; G[Output: JSON Messages & CSV Dumps]",
+    "section": "High-Level Architecture",
+    "text": "High-Level Architecture\nBelow is a Mermaid diagram outlining the architecture:\n\n\n\n\n\n%%{init: {'theme': 'neutral', 'themeCSS': '.node rect { rx: 10; ry: 10; }',\"flowchart\": {\"rankSpacing\": 150}}}%%\nflowchart TD\n    A[FluxFakr Core] --&gt; B[CLI & Configuration]\n    A --&gt; C[Generators]\n    C --&gt; D[Market Data Generator]\n    C --&gt; F[Other Data Generator]\n    A --&gt; G[Output: JSON Messages & CSV Dumps]",
     "crumbs": [
       "Core Concepts and Architecture"
     ]
@@ -133,8 +133,8 @@
     "objectID": "core-concepts-and-architecture.html#data-flow-overview",
     "href": "core-concepts-and-architecture.html#data-flow-overview",
     "title": "FluxFakr - Core Concepts and Architecture",
-    "section": "",
-    "text": "Input: Command-line parameters (e.g., messages per second, number of instruments) define the simulation settings.\nProcessing: The selected generator module simulates data ticks and updates its internal state.\nOutput: JSON messages are streamed in real time, and on shutdown, the internal state is dumped as a CSV.\n\nThis design ensures FluxFakr remains flexible, robust, and easy to extend.",
+    "section": "Data Flow Overview",
+    "text": "Data Flow Overview\n\nInput: Command-line parameters (e.g., messages per second, number of instruments) define the simulation settings.\nProcessing: The selected generator module simulates data ticks and updates its internal state.\nOutput: JSON messages are streamed in real time, and on shutdown, the internal state is dumped as a CSV.\n\nThis design ensures FluxFakr remains flexible, robust, and easy to extend.",
     "crumbs": [
       "Core Concepts and Architecture"
     ]
@@ -144,7 +144,7 @@
     "href": "how-to-guides.html",
     "title": "FluxFakr - How-to Guides",
     "section": "",
-    "text": "This section provides step-by-step guides to help you effectively use FluxFakr.\n\n\n\nBuild the Project:\ncargo build --release\nRun the Simulator:\n./target/release/fluxfakr --module market --mps 100 --variants 5\\\n --broker localhost:9092 --topic market-data\nThis simulates market data at 100 messages per second for 5 instruments.\nSample messages\n{\"ask\":194.87817534561705,\"bid\":194.2493874690181,\"instrument\":\"STK0\",\"price\":194.56378140731758,\"timestamp\":1738677164,\"volume\":1283}\n{\"ask\":194.901509312583,\"bid\":194.48144141492307,\"instrument\":\"STK0\",\"price\":194.69147536375303,\"timestamp\":1738677165,\"volume\":2386}\n{\"ask\":195.09920944595802,\"bid\":194.36777989565638,\"instrument\":\"STK0\",\"price\":194.7334946708072,\"timestamp\":1738677166,\"volume\":3545}\nSample of output when app is terminated\n id,price,bid,ask,volume\n STK0,194.73,194.37,195.10,3545\n\n\n\n\nYou can adjust simulation parameters such as drift and volatility in the code, at some point we’d like to add module-specific parameters to the command line.",
+    "text": "This section provides step-by-step guides to help you effectively use FluxFakr.",
     "crumbs": [
       "How-to Guides"
     ]
@@ -153,8 +153,8 @@
     "objectID": "how-to-guides.html#running-a-market-data-simulation",
     "href": "how-to-guides.html#running-a-market-data-simulation",
     "title": "FluxFakr - How-to Guides",
-    "section": "",
-    "text": "Build the Project:\ncargo build --release\nRun the Simulator:\n./target/release/fluxfakr --module market --mps 100 --variants 5\\\n --broker localhost:9092 --topic market-data\nThis simulates market data at 100 messages per second for 5 instruments.\nSample messages\n{\"ask\":194.87817534561705,\"bid\":194.2493874690181,\"instrument\":\"STK0\",\"price\":194.56378140731758,\"timestamp\":1738677164,\"volume\":1283}\n{\"ask\":194.901509312583,\"bid\":194.48144141492307,\"instrument\":\"STK0\",\"price\":194.69147536375303,\"timestamp\":1738677165,\"volume\":2386}\n{\"ask\":195.09920944595802,\"bid\":194.36777989565638,\"instrument\":\"STK0\",\"price\":194.7334946708072,\"timestamp\":1738677166,\"volume\":3545}\nSample of output when app is terminated\n id,price,bid,ask,volume\n STK0,194.73,194.37,195.10,3545",
+    "section": "Running a Market Data Simulation",
+    "text": "Running a Market Data Simulation\n\nBuild the Project:\ncargo build --release\nRun the Simulator:\n./target/release/fluxfakr --module market --mps 100 --variants 5\\\n --broker localhost:9092 --topic market-data\nThis simulates market data at 100 messages per second for 5 instruments.\nSample messages\n{\"ask\":194.87817534561705,\"bid\":194.2493874690181,\"instrument\":\"STK0\",\"price\":194.56378140731758,\"timestamp\":1738677164,\"volume\":1283}\n{\"ask\":194.901509312583,\"bid\":194.48144141492307,\"instrument\":\"STK0\",\"price\":194.69147536375303,\"timestamp\":1738677165,\"volume\":2386}\n{\"ask\":195.09920944595802,\"bid\":194.36777989565638,\"instrument\":\"STK0\",\"price\":194.7334946708072,\"timestamp\":1738677166,\"volume\":3545}\nSample of output when app is terminated\n id,price,bid,ask,volume\n STK0,194.73,194.37,195.10,3545",
     "crumbs": [
       "How-to Guides"
     ]
@@ -163,8 +163,8 @@
     "objectID": "how-to-guides.html#customization",
     "href": "how-to-guides.html#customization",
     "title": "FluxFakr - How-to Guides",
-    "section": "",
-    "text": "You can adjust simulation parameters such as drift and volatility in the code, at some point we’d like to add module-specific parameters to the command line.",
+    "section": "Customization",
+    "text": "Customization\nYou can adjust simulation parameters such as drift and volatility in the code, at some point we’d like to add module-specific parameters to the command line.",
     "crumbs": [
       "How-to Guides"
     ]
@@ -174,7 +174,7 @@
     "href": "contributor-developer-guide.html",
     "title": "FluxFakr - Contributor / Developer Guide",
     "section": "",
-    "text": "Welcome to the FluxFakr Contributor and Developer Guide. This document is designed to help you get started with contributing to FluxFakr and understanding its internal workings.\n\n\n\nFork and Clone the Repository:\ngit clone https://github.com/neural-chilli/fluxfakr.git\ncd fluxfakr\nSet Up Your Environment: Ensure you have Rust (edition 2021) and Cargo installed.\nBuild the Project:\ncargo build\n\n\n\n\n\nsrc/main.rs: The entry point; handles CLI parsing and generator selection.\nsrc/generator.rs: Defines the common Generator trait.\nsrc/generators/: Contains the different generator modules (e.g., market.rs for market data, langchain.rs for language-based data generation).\n\n\n\n\n\nImplement the Generator Trait: Create a new module under src/generators/ and implement the trait:\npub trait Generator {\n    fn generate(&mut self) -&gt; String;\n    fn dump(&self) -&gt; String;\n}\nIntegrate Your Module: Update src/generators/mod.rs to include your new module.\nWrite Tests: Ensure you add unit tests for your module to maintain stability.\n\n\n\n\n\nCode Style: Follow Rust’s standard formatting guidelines (rustfmt).\nCommit Messages: Write clear and descriptive commit messages.\nPull Requests: Submit pull requests for review. Ensure that all tests pass before requesting a merge.\n\nThank you for your contributions to FluxFakr!",
+    "text": "Welcome to the FluxFakr Contributor and Developer Guide. This document is designed to help you get started with contributing to FluxFakr and understanding its internal workings.",
     "crumbs": [
       "Contributor / Developer Guide"
     ]
@@ -183,8 +183,8 @@
     "objectID": "contributor-developer-guide.html#getting-started-with-development",
     "href": "contributor-developer-guide.html#getting-started-with-development",
     "title": "FluxFakr - Contributor / Developer Guide",
-    "section": "",
-    "text": "Fork and Clone the Repository:\ngit clone https://github.com/neural-chilli/fluxfakr.git\ncd fluxfakr\nSet Up Your Environment: Ensure you have Rust (edition 2021) and Cargo installed.\nBuild the Project:\ncargo build",
+    "section": "Getting Started with Development",
+    "text": "Getting Started with Development\n\nFork and Clone the Repository:\ngit clone https://github.com/neural-chilli/fluxfakr.git\ncd fluxfakr\nSet Up Your Environment: Ensure you have Rust (edition 2021) and Cargo installed.\nBuild the Project:\ncargo build",
     "crumbs": [
       "Contributor / Developer Guide"
     ]
@@ -193,8 +193,8 @@
     "objectID": "contributor-developer-guide.html#project-structure",
     "href": "contributor-developer-guide.html#project-structure",
     "title": "FluxFakr - Contributor / Developer Guide",
-    "section": "",
-    "text": "src/main.rs: The entry point; handles CLI parsing and generator selection.\nsrc/generator.rs: Defines the common Generator trait.\nsrc/generators/: Contains the different generator modules (e.g., market.rs for market data, langchain.rs for language-based data generation).",
+    "section": "Project Structure",
+    "text": "Project Structure\n\nsrc/main.rs: The entry point; handles CLI parsing and generator selection.\nsrc/generator.rs: Defines the common Generator trait.\nsrc/generators/: Contains the different generator modules (e.g., market.rs for market data, langchain.rs for language-based data generation).",
     "crumbs": [
       "Contributor / Developer Guide"
     ]
@@ -203,8 +203,8 @@
     "objectID": "contributor-developer-guide.html#adding-a-new-generator-module",
     "href": "contributor-developer-guide.html#adding-a-new-generator-module",
     "title": "FluxFakr - Contributor / Developer Guide",
-    "section": "",
-    "text": "Implement the Generator Trait: Create a new module under src/generators/ and implement the trait:\npub trait Generator {\n    fn generate(&mut self) -&gt; String;\n    fn dump(&self) -&gt; String;\n}\nIntegrate Your Module: Update src/generators/mod.rs to include your new module.\nWrite Tests: Ensure you add unit tests for your module to maintain stability.",
+    "section": "Adding a New Generator Module",
+    "text": "Adding a New Generator Module\n\nImplement the Generator Trait: Create a new module under src/generators/ and implement the trait:\npub trait Generator {\n    fn generate(&mut self) -&gt; String;\n    fn dump(&self) -&gt; String;\n}\nIntegrate Your Module: Update src/generators/mod.rs to include your new module.\nWrite Tests: Ensure you add unit tests for your module to maintain stability.",
     "crumbs": [
       "Contributor / Developer Guide"
     ]
@@ -213,8 +213,8 @@
     "objectID": "contributor-developer-guide.html#contribution-guidelines",
     "href": "contributor-developer-guide.html#contribution-guidelines",
     "title": "FluxFakr - Contributor / Developer Guide",
-    "section": "",
-    "text": "Code Style: Follow Rust’s standard formatting guidelines (rustfmt).\nCommit Messages: Write clear and descriptive commit messages.\nPull Requests: Submit pull requests for review. Ensure that all tests pass before requesting a merge.\n\nThank you for your contributions to FluxFakr!",
+    "section": "Contribution Guidelines",
+    "text": "Contribution Guidelines\n\nCode Style: Follow Rust’s standard formatting guidelines (rustfmt).\nCommit Messages: Write clear and descriptive commit messages.\nPull Requests: Submit pull requests for review. Ensure that all tests pass before requesting a merge.\n\nThank you for your contributions to FluxFakr!",
     "crumbs": [
       "Contributor / Developer Guide"
     ]
@@ -224,7 +224,7 @@
     "href": "roadmap.html",
     "title": "FluxFakr - Roadmap",
     "section": "",
-    "text": "This document outlines our planned features and improvements for FluxFakr.\n\n\n\nExpand Generator Modules:\n\nEnhance the Market Data Generator.\nDevelop additional modules (e.g., sales data, IoT data).\n\nImprove Documentation:\n\nAdd more detailed how-to guides and tutorials.\nCreate video walk-throughs and interactive examples.\n\n\n\n\n\n\nFurther Expand Generator Modules:\n\nDevelop a module using Langchain to allow data creation using an LLM\n\nPerformance Enhancements:\n\nOptimize simulation performance for high message rates.\nExplore asynchronous processing for scalability.\n\nUser Customization:\n\nEnable custom JSON templates for generator modules.\nDevelop a web-based configuration UI.\n\nPlugins:\n\nEnable custom plugins in WASM for generator modules.\n\n\n\n\n\n\nSupport Additional Transports:\n\nAllow transports other than Kafka (e.g., MQTT, AMQP, Redis).\n\nCommunity Engagement:\n\nFoster a growing community of contributors.\nSeek support and mentors for Apache Incubator.\n\n\nWe welcome feedback on our roadmap. Feel free to open an issue or submit a pull request with your suggestions!",
+    "text": "This document outlines our planned features and improvements for FluxFakr.",
     "crumbs": [
       "Roadmap"
     ]
@@ -233,8 +233,8 @@
     "objectID": "roadmap.html#near-term-goals",
     "href": "roadmap.html#near-term-goals",
     "title": "FluxFakr - Roadmap",
-    "section": "",
-    "text": "Expand Generator Modules:\n\nEnhance the Market Data Generator.\nDevelop additional modules (e.g., sales data, IoT data).\n\nImprove Documentation:\n\nAdd more detailed how-to guides and tutorials.\nCreate video walk-throughs and interactive examples.",
+    "section": "Near-Term Goals",
+    "text": "Near-Term Goals\n\nExpand Generator Modules:\n\nEnhance the Market Data Generator.\nDevelop additional modules (e.g., sales data, IoT data).\n\nImprove Documentation:\n\nAdd more detailed how-to guides and tutorials.\nCreate video walk-throughs and interactive examples.",
     "crumbs": [
       "Roadmap"
     ]
@@ -243,8 +243,8 @@
     "objectID": "roadmap.html#mid-term-goals",
     "href": "roadmap.html#mid-term-goals",
     "title": "FluxFakr - Roadmap",
-    "section": "",
-    "text": "Further Expand Generator Modules:\n\nDevelop a module using Langchain to allow data creation using an LLM\n\nPerformance Enhancements:\n\nOptimize simulation performance for high message rates.\nExplore asynchronous processing for scalability.\n\nUser Customization:\n\nEnable custom JSON templates for generator modules.\nDevelop a web-based configuration UI.\n\nPlugins:\n\nEnable custom plugins in WASM for generator modules.",
+    "section": "Mid-Term Goals",
+    "text": "Mid-Term Goals\n\nFurther Expand Generator Modules:\n\nDevelop a module using Langchain to allow data creation using an LLM\n\nPerformance Enhancements:\n\nOptimize simulation performance for high message rates.\nExplore asynchronous processing for scalability.\n\nUser Customization:\n\nEnable custom JSON templates for generator modules.\nDevelop a web-based configuration UI.\n\nPlugins:\n\nEnable custom plugins in WASM for generator modules.",
     "crumbs": [
       "Roadmap"
     ]
@@ -253,8 +253,8 @@
     "objectID": "roadmap.html#long-term-goals",
     "href": "roadmap.html#long-term-goals",
     "title": "FluxFakr - Roadmap",
-    "section": "",
-    "text": "Support Additional Transports:\n\nAllow transports other than Kafka (e.g., MQTT, AMQP, Redis).\n\nCommunity Engagement:\n\nFoster a growing community of contributors.\nSeek support and mentors for Apache Incubator.\n\n\nWe welcome feedback on our roadmap. Feel free to open an issue or submit a pull request with your suggestions!",
+    "section": "Long-Term Goals",
+    "text": "Long-Term Goals\n\nSupport Additional Transports:\n\nAllow transports other than Kafka (e.g., MQTT, AMQP, Redis).\n\nCommunity Engagement:\n\nFoster a growing community of contributors.\nSeek support and mentors for Apache Incubator.\n\n\nWe welcome feedback on our roadmap. Feel free to open an issue or submit a pull request with your suggestions!",
     "crumbs": [
       "Roadmap"
     ]
