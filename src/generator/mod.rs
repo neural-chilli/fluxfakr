@@ -1,4 +1,4 @@
-pub mod market;
+pub mod stock;
 pub mod supermarket_sales;
 
 pub trait Generator {

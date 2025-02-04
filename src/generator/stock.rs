@@ -14,11 +14,11 @@ pub struct Instrument {
 }
 
 /// A Market Data Generator that simulates realistic stock price updates.
-pub struct MarketDataGenerator {
+pub struct StockDataGenerator {
     instruments: Vec<Instrument>,
 }
 
-impl MarketDataGenerator {
+impl StockDataGenerator {
     /// Creates a new MarketDataGenerator with the specified number of variants.
     pub fn new(variants: usize) -> Self {
         let mut rng = rand::rng();
@@ -36,11 +36,11 @@ impl MarketDataGenerator {
                 }
             })
             .collect();
-        MarketDataGenerator { instruments }
+        StockDataGenerator { instruments }
     }
 }
 
-impl crate::Generator for MarketDataGenerator {
+impl crate::Generator for StockDataGenerator {
 
     fn generate(&mut self) -> String {
         let mut rng = rand::rng();
@@ -128,7 +128,7 @@ mod tests {
 
     #[test]
     fn test_generate_market_data() {
-        let mut generator = MarketDataGenerator::new(5);
+        let mut generator = StockDataGenerator::new(5);
         let msg_str = generator.generate();
         // Parse the JSON message to ensure it is valid.
         let msg: Value = serde_json::from_str(&msg_str).unwrap();
@@ -142,7 +142,7 @@ mod tests {
 
     #[test]
     fn test_dump_market_data() {
-        let generator = MarketDataGenerator::new(3);
+        let generator = StockDataGenerator::new(3);
         let csv = generator.dump();
         let lines: Vec<&str> = csv.lines().collect();
         // Expect a header plus one line per instrument.
