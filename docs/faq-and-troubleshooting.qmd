@@ -2,7 +2,6 @@
 title: "FluxFakr - FAQ and Troubleshooting"
 ---
 
-# FAQ and Troubleshooting
 
 This section addresses common questions and provides troubleshooting tips for FluxFakr.
 

@@ -2,8 +2,6 @@
 title: "FluxFakr - Core Concepts and Architecture"
 ---
 
-# Core Concepts and Architecture
-
 FluxFakr is designed with a modular, extensible architecture that allows you to simulate various types of data streams.
 
 ## The Generator Trait

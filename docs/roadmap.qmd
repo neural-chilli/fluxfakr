@@ -2,7 +2,6 @@
 title: "FluxFakr - Roadmap"
 ---
 
-# Roadmap
 
 This document outlines our planned features and improvements for FluxFakr.
 

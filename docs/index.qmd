@@ -2,8 +2,6 @@
 title: "FluxFakr - Introduction"
 ---
 
-# Introduction
-
 Welcome to **FluxFakr**, the modular data stream generator built in Rust. FluxFakr simulates realistic synthetic data flows using a pluggable architecture that allows you to easily swap or extend generator modules.
 
 In these docs you'll find:

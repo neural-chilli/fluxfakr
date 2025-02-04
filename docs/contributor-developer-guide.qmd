@@ -2,8 +2,6 @@
 title: "FluxFakr - Contributor / Developer Guide"
 ---
 
-# Contributor / Developer Guide
-
 Welcome to the FluxFakr Contributor and Developer Guide. This document is designed to help you get started with contributing to FluxFakr and understanding its internal workings.
 
 ## Getting Started with Development

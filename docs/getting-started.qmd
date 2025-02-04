@@ -2,8 +2,6 @@
 title: "FluxFakr - Getting Started"
 ---
 
-# Getting Started
-
 This guide will walk you through setting up FluxFakr on your local machine.
 
 ## Prerequisites

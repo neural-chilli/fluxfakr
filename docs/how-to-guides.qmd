@@ -2,7 +2,6 @@
 title: "FluxFakr - How-to Guides"
 ---
 
-# How-to Guides
 
 This section provides step-by-step guides to help you effectively use FluxFakr.
 
