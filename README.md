@@ -4,7 +4,7 @@
 # FluxFakr
 
 ## Overview
-**FluxFakr** is a **modular, high-performance data stream generator** built in **Rust**. It allows users to simulate **realistic synthetic data flows** for testing, analytics, and AI-driven applications.
+**FluxFakr** is a **modular, high-performance data stream generator** built in **Rust**. It allows users to simulate **realistic synthetic data flows** for testing.
 
 With its **pluggable architecture**, FluxFakr lets you define and swap generator modules effortlessly, making it highly customizable for different simulation needs.
 
@@ -13,7 +13,6 @@ With its **pluggable architecture**, FluxFakr lets you define and swap generator
 ## Features
 - **Modular Design**: Easily swap or extend generator modules.
 - **High-Performance Simulation**: Configurable message rates with real-time streaming.
-- **Multiple Output Formats**: Supports **JSON streaming** and **CSV dumps**.
 - **Configurable Data Flows**: Define parameters like message rate, drift, and volatility.
 - **Extensible Architecture**: Implement new data generators using a simple Rust trait.
 
