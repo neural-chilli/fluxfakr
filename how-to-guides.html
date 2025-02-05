@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#running-a-market-data-simulation" id="toc-running-a-market-data-simulation" class="nav-link active" data-scroll-target="#running-a-market-data-simulation">Running a Market Data Simulation</a></li>
+  <li><a href="#running-a-stock-market-data-simulation" id="toc-running-a-stock-market-data-simulation" class="nav-link active" data-scroll-target="#running-a-stock-market-data-simulation">Running a Stock Market Data Simulation</a></li>
   <li><a href="#running-a-supermarket-sales-data-simulation" id="toc-running-a-supermarket-sales-data-simulation" class="nav-link" data-scroll-target="#running-a-supermarket-sales-data-simulation">Running a Supermarket Sales Data Simulation</a></li>
   <li><a href="#customization" id="toc-customization" class="nav-link" data-scroll-target="#customization">Customization</a></li>
   </ul>
@@ -241,13 +241,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This section provides step-by-step guides to help you effectively use FluxFakr.</p>
-<section id="running-a-market-data-simulation" class="level2">
-<h2 class="anchored" data-anchor-id="running-a-market-data-simulation">Running a Market Data Simulation</h2>
+<section id="running-a-stock-market-data-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="running-a-stock-market-data-simulation">Running a Stock Market Data Simulation</h2>
 <ol type="1">
 <li><p><strong>Build the Project:</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build <span class="at">--release</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Run the Simulator:</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./target/release/fluxfakr</span> <span class="at">--module</span> market <span class="at">--mps</span> 100 <span class="at">--variants</span> 5<span class="dt">\</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./target/release/fluxfakr</span> <span class="at">--module</span> stock <span class="at">--mps</span> 100 <span class="at">--variants</span> 5<span class="dt">\</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="at">--broker</span> localhost:9092 <span class="at">--topic</span> market-data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This simulates market data at 100 messages per second for 5 instruments.</p>
 <p>Sample messages</p>
