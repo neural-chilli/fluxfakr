@@ -135,5 +135,5 @@ FluxFakr is open-source software, licensed under the Apache 2.0 license.
 
 ---
 
-**Happy coding with FluxFakr! 🚀**
+**Happy coding with FluxFakr!**
 ```
