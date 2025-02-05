@@ -5,7 +5,7 @@ title: "FluxFakr - How-to Guides"
 
 This section provides step-by-step guides to help you effectively use FluxFakr.
 
-## Running a Market Data Simulation
+## Running a Stock Market Data Simulation
 
 1. **Build the Project:**
 
@@ -16,7 +16,7 @@ This section provides step-by-step guides to help you effectively use FluxFakr.
 2. **Run the Simulator:**
 
    ```bash
-   ./target/release/fluxfakr --module market --mps 100 --variants 5\
+   ./target/release/fluxfakr --module stock --mps 100 --variants 5\
     --broker localhost:9092 --topic market-data
    ```
 
